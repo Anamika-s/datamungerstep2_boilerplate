@@ -247,14 +247,51 @@ namespace DbEngine
             return aggregateList;
         }
 
-    //      /*
-    //* extract the order by fields from the query string. Please note that we will
-    //* need to extract the field(s) after "order by" clause in the query, if at all
-    //* the order by clause exists. For eg: select city,winner,team1,team2 from
-    //* data/ipl.csv order by city from the query mentioned above, we need to extract
-    //* "city". Please note that we can have more than one order by fields.
-    //*/
-    private List<string> GetOrderByFields(string queryString)
+        //public List<AggregateFunction> GetAggregateFunctions(String queryString)
+        //{
+        //    // queryString = queryString.toLowerCase();
+        //      List<AggregateFunction> aggregate = new List<AggregateFunction>();
+        //    // boolean state = false;
+        //    // String getAggregate = "";
+        //      int selectIndex = queryString.ToLower().IndexOf("select");
+        //      int fromIndex = queryString.ToLower().IndexOf(" from");
+        //      String query = queryString.ToLower().Substring(selectIndex + 7, fromIndex);
+        //    // query = query.Remove(query.Length , 7);
+        //    String[] aggQuery = null;
+        //    aggQuery = query.Split(",");
+        //    for (int i = 0; i < aggQuery.Length; i++)
+        //    {
+        //        if (aggQuery[i].StartsWith("max(") && aggQuery[i].EndsWith(")")
+        //                || aggQuery[i].StartsWith("min(") && aggQuery[i].EndsWith(")")
+        //                || aggQuery[i].StartsWith("avg(") && aggQuery[i].EndsWith(")")
+        //                || aggQuery[i].StartsWith("sum") && aggQuery[i].EndsWith(")"))
+        //        {
+        //            aggregate.Add(new AggregateFunction(aggQuery[i].Substring(4, aggQuery[i].Length - 1),
+        //                    aggQuery[i].Substring(0, 3)));
+        //            // getAggregate += aggQuery[i] + " ";
+        //            // state = true;
+        //        }
+        //        else if (aggQuery[i].StartsWith("count(") && aggQuery[i].EndsWith(")"))
+        //        {
+        //            aggregate.Add(new AggregateFunction(aggQuery[i].Substring(6, aggQuery[i].Length - 1),
+        //                    aggQuery[i].Substring(0, 5)));
+        //            // } else {
+        //            // Aggregate = null;
+        //            // }
+        //        }
+
+        //    }
+        //    return aggregate;
+        //}
+
+        //      /*
+        //* extract the order by fields from the query string. Please note that we will
+        //* need to extract the field(s) after "order by" clause in the query, if at all
+        //* the order by clause exists. For eg: select city,winner,team1,team2 from
+        //* data/ipl.csv order by city from the query mentioned above, we need to extract
+        //* "city". Please note that we can have more than one order by fields.
+        //*/
+        private List<string> GetOrderByFields(string queryString)
         {
 
             String[] conditionQuery = queryString.ToLower().Split("from");

@@ -9,19 +9,35 @@ namespace DbEngine
     public class AggregateFunction
     {
         String field = "";
-        String functions = "";
-        // Write logic for constructor
-        public AggregateFunction(string field, string function)
-        {
-            this.field = field;
-            this.functions = function;
-        }
-        public String toString()
-        {
-            return "AggregateFunction{" +
-                    "field='" + field + '\'' +
-                    ", functions='" + functions + '\'' +
-                    '}';
-        }
-    }
+        String function= "";
+		// Write logic for constructor
+		public AggregateFunction(String field, String function)
+		{
+			 
+			this.function = function;
+			this.field = field;
+		}
+
+		public void setFunction(String function)
+		{
+			this.function = function;
+		}
+
+		public void setField(String field)
+		{
+			this.field = field;
+		}
+
+		public String getFunction()
+		{
+			// TODO Auto-generated method stub
+			return function;
+		}
+
+		public String getField()
+		{
+			// TODO Auto-generated method stub
+			return field;
+		}
+	}
 }
